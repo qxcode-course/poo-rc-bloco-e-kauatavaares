@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2025-12-03_10-45-57",
+            "content": "@@ -1,261 +0,0 @@\n-from abc import ABC, abstractmethod%0A%0A%0Aclass Animal:%0A    def __init__(self, name: str):%0A        self.name = name%0A%0A    def apresentar_nome(self):%0A        print(f%22Eu sou um(a) %7Bself.name%7D%22)%0A%0A    def fazer_som(self):%0A        pass%0A%0A    def mover(self):%0A        pass%0A\n",
+            "lines": "0"
+        },
+        {
+            "label": "2025-12-03_10-55-35",
+            "content": "@@ -47,15 +47,10 @@\n imal\n-(ABC)\n :%0A\n+\n     \n@@ -177,17 +177,16 @@\n lf.name%7D\n-!\n %22)%0A%0A    \n@@ -233,32 +233,32 @@\n ef mover(self):%0A\n+\n         pass%0A%0Acl\n@@ -258,997 +258,4 @@\n ass%0A\n-%0Aclass Leao(Animal):%0A    def __init__(self, name: str):%0A        super(). __init__(name)%0A%0A    def fazer_som(self):%0A        print(%22WRAAAAAAU%22)%0A%0A    def mover(self):%0A        print(%22O leao %C3%A9 o rei da floresta!!%22)%0A%0Aclass Elefante(Animal):%0A    def __init__(self, name: str):%0A        super().__init__(name)%0A%0A    def fazer_som(self):%0A        print(%22PRRRRRR (SOM DA TROMBA)%22)%0A%0A    def mover(self):%0A        print(%22O elefante %C3%A9 gigantesco!!%22)%0A%0Aclass Cobra(Animal):%0A    def __init__(self, name: str):%0A        super().__init__(name)%0A%0A    def fazer_som(self):%0A        print(%22Sssssss...%22)%0A%0A    def mover(self):%0A        print(%22A cobra %C3%A9 um animal venenoso!!!%22)%0A%0A%0Adef apresentar(animal = Animal):%0A    animal.apresentar_nome()%0A    animal.fazer_som()%0A    animal.mover()%0A    print(%22Tipo do animal:%22, type(animal).__name__)%0A    print(%22-%22 * 30)%0A%0A%0Aif __name__ == %22__main__%22:%0A    animais = %5B%0A        Leao(%22Mufasa%22),%0A        Elefante(%22Elly%22),%0A        Cobra(%22Nagini%22)%0A    %5D%0A    for a in animais:%0A        apresentar(a)%0A%0A\n",
+            "lines": "15"
+        },
+        {
+            "label": "2025-12-03_11-29-24",
+            "content": "from abc import ABC, abstractmethod\n\n\nclass Animal(ABC):\n    def __init__(self, name: str):\n        self.name = name\n\n    def apresentar_nome(self):\n        print(f\"Eu sou um(a) {self.name}!\")\n\n    def fazer_som(self):\n        pass\n\n    def mover(self):\n        pass\n\nclass Leao(Animal):\n    def __init__(self, name: str):\n        super(). __init__(name)\n\n    def fazer_som(self):\n        print(\"WRAAAAAAU\")\n\n    def mover(self):\n        print(\"O leao \u00e9 o rei da floresta!!\")\n\nclass Elefante(Animal):\n    def __init__(self, name: str):\n        super().__init__(name)\n\n    def fazer_som(self):\n        print(\"PRRRRRR (SOM DA TROMBA)\")\n\n    def mover(self):\n        print(\"O elefante \u00e9 gigantesco!!\")\n\nclass Cobra(Animal):\n    def __init__(self, name: str):\n        super().__init__(name)\n\n    def fazer_som(self):\n        print(\"Sssssss...\")\n\n    def mover(self):\n        print(\"A cobra \u00e9 um animal venenoso!!!\")\n\n\ndef apresentar(animal = Animal):\n    animal.apresentar_nome()\n    animal.fazer_som()\n    animal.mover()\n    print(\"Tipo do animal:\", type(animal).__name__)\n    print(\"-\" * 30)\n\n\nif __name__ == \"__main__\":\n    animais = [\n        Leao(\"Mufasa\"),\n        Elefante(\"Elly\"),\n        Cobra(\"Nagini\")\n    ]\n    for a in animais:\n        apresentar(a)\n\n",
+            "lines": "64"
+        }
+    ]
+}
