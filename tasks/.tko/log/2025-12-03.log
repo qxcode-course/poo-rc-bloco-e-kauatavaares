@@ -18,3 +18,6 @@
 2025-12-03 11:29:42, EXEC, v:1, k:poo@zoo, mode:LOCK, rate:0
 2025-12-03 11:29:43, MOVE, v:1, k:poo@zoo, mode:BACK
 2025-12-03 11:30:16, SELF, v:1, k:poo@zoo, rate:100, human:sim, iagen:sim, guide:sim, other:sim, alone:8
+2025-12-03 16:32:11, MOVE, v:1, k:poo@zoo, mode:PICK
+2025-12-03 16:32:11, EXEC, v:1, k:poo@zoo, mode:LOCK, rate:0
+2025-12-03 16:32:12, MOVE, v:1, k:poo@zoo, mode:BACK

@@ -6,7 +6,7 @@ class Animal(ABC):
         self.name = name
 
     def apresentar_nome(self):
-        print(f"Eu sou um(a) {self.name}!")
+        print(f"Eu sou o(a) {self.name}!")
 
     def fazer_som(self):
         pass
@@ -22,7 +22,7 @@ class Leao(Animal):
         print("WRAAAAAAU")
 
     def mover(self):
-        print("O leao é o rei da floresta!!")
+        print("O rei da florestaaaa!!")
 
 class Elefante(Animal):
     def __init__(self, name: str):
@@ -32,7 +32,7 @@ class Elefante(Animal):
         print("PRRRRRR (SOM DA TROMBA)")
 
     def mover(self):
-        print("O elefante é gigantesco!!")
+        print("Um Elefante gigantesco")
 
 class Cobra(Animal):
     def __init__(self, name: str):
@@ -42,7 +42,17 @@ class Cobra(Animal):
         print("Sssssss...")
 
     def mover(self):
-        print("A cobra é um animal venenoso!!!")
+        print("O meu veneno é perigoso!!!")
+
+class Gato(Animal):
+    def init(self, name: str):
+        super().__init__(name)
+
+    def fazer_som(self):
+        print("Miauuuuuuuu!!!")
+
+    def mover(self):
+        print("E eu gosto muito de rato!!")
 
 
 def apresentar(animal = Animal):
@@ -57,7 +67,8 @@ if __name__ == "__main__":
     animais = [
         Leao("Mufasa"),
         Elefante("Elly"),
-        Cobra("Nagini")
+        Cobra("Nagini"),
+        Gato("Junior")
     ]
     for a in animais:
         apresentar(a)
