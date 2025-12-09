@@ -54,6 +54,26 @@ class Gato(Animal):
     def mover(self):
         print("E eu gosto muito de rato!!")
 
+class Cabra(Animal):
+    def __init__(self, name: str):
+        super().__init__(name)
+
+    def fazer_som(self):
+        print("BÉEEEEEEEEEEEEEEEEEEE")
+
+    def mover(self):
+        print("E gosto de capim, e reproduzo leite")
+
+class Macaco(Animal):
+    def __init__(self, name: str):
+        super().__init__(name)
+
+    def fazer_som(self):
+        print("UUU AAA")
+
+    def mover(self):
+        print("Eu gosto de banana !!!!")
+
 
 def apresentar(animal = Animal):
     animal.apresentar_nome()
@@ -68,7 +88,9 @@ if __name__ == "__main__":
         Leao("Mufasa"),
         Elefante("Elly"),
         Cobra("Nagini"),
-        Gato("Junior")
+        Gato("Junior"),
+        Cabra("Kaua"),
+        Macaco("Hudson")
     ]
     for a in animais:
         apresentar(a)
