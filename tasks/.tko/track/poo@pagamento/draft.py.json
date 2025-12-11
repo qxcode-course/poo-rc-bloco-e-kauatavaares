@@ -42,8 +42,38 @@
         },
         {
             "label": "2025-12-11_11-15-24",
-            "content": "from abc import ABC, abstractmethod\n\nclass Pagamento:\n    def __init__(self, valor: float, descricao: str):\n        self.valor = valor\n        self.descricao = descricao\n    def validar_valor(self):\n        if self.valor <= 0:\n            raise ValueError(\"Valor negativo\")\n    def resumo(self):\n        return f\"Pagamento de R$ {self.valor}: {self.descricao}\"\n    @abstractmethod\n    def processar(self):\n        pass\n\nclass CartaoCredito(Pagamento):\n    def __init__(self, valor, descricao, numero, nome_titu, limite_disp):\n        super().__init__(valor, descricao)\n        self.numero = numero\n        self.nome_titu = nome_titu\n        self.limite_disp = limite_disp\n\n    def processar(self):\n        if self.valor > self.limite_disp:\n            raise Exception(f\"Limite insuficiente no cart\u00e3o\")\n        else:\n            self.limite_disp -= self.valor\n            print(f\"Pagamento aprovado\")\n\nclass Pix(Pagamento):\n    def __init__(self, valor, descricao, chave, banco):\n        super().__init__(valor, descricao)\n        self.chave = chave\n        self.banco = banco\n\n    def processar(self):\n        print(f\"Pix enivado via {self.banco} usando a chave {self.chave}\")\n\nclass Boleto(Pagamento):\n    def __init__(self, valor, descricao, codigo_barras, vencimento):\n        super().__init__(valor, descricao)\n        self.codigo_barras = codigo_barras\n        self.vencimento = vencimento\n\n    def processar(self):\n        print(f\"Boleto gerado. Aguardando pagamento.....\")\n\ndef processar_pagamento(pagamento = Pagamento):\n    try:\n         pagamento.validar_valor()\n         pagamento.resumo()\n         pagamento.processar()\n    except Exception as e:\n        print(e)\n\npagamentos = [\n    Pix(150, \"Camisa esportiva\", \"email@ex.com\", \"Banco XPTO\"),\n    CartaoCredito(400, \"T\u00e9nis esportivo\", \"1234 5678 9123 4567\", \"Cliente X\", 500),\n    Boleto(89.90, \"Livro de Python\", \"123456789000\", \"2025-01-10\"),\n    CartaoCredito(800, \"Notebook\", \"9999 8888 7777 6666\", \"Cliente Y\", 700)\n]\nfor p in pagamentos:\n    processar_pagamento(p)\n\n",
+            "content": "@@ -1478,532 +1478,8 @@\n %22)%0A%0A\n-class Fiado(Pagamento):%0A    def __init__(self, valor, descricao, cliente, limite_fiado):%0A        super().__init__(valor, descricao)%0A        self.cliente = cliente%0A        self.limite_fiado = limite_fiado%0A%0A    def processar(self):%0A        if self.valor %3E self.limite_fiado:%0A            raise Exception(f%22Fiado negado para %7Bself.cliente%7D: limite insuficiente!%22)%0A        self.limite_fiado -= self.valor%0A        print(f%22Compra no fiado registrada para %7Bself.cliente%7D.%22%0A              f%22Limite restante: R$ %7Bself.limite_fiado%7D%22)%0A%0A\n def \n@@ -1980,64 +1980,8 @@\n 700)\n-,%0A    Fiado(2999, %22Notebook Gamer%22, %22David Senna%22, 3000)\n %0A%5D%0Af\n",
             "lines": "64"
+        },
+        {
+            "label": "2025-12-11_14-38-02",
+            "content": "@@ -1995,31 +1995,16 @@\n _fiado%7D%22\n-%0A              \n )%0A%0Adef p\n",
+            "lines": "78"
+        },
+        {
+            "label": "2025-12-11_14-38-31",
+            "content": "@@ -2292,58 +2292,8 @@\n %22),%0A\n-    Pix(0, %22Cafe%22, %22senna@ufc.com%22, %22Banco POO%22),%0A\n     \n",
+            "lines": "79"
+        },
+        {
+            "label": "2025-12-11_14-40-31",
+            "content": "@@ -894,91 +894,8 @@\n vado\n- no cart%C3%A3o %7Bself.nome_titu%7D%22%0A                  f%22Limite restante %7Bself.limite_disp%7D\n %22)%0A%0A\n",
+            "lines": "80"
+        },
+        {
+            "label": "2025-12-11_14-42-22",
+            "content": "@@ -921,13 +921,8 @@\n itu%7D\n-.    \n %22%0A  \n",
+            "lines": "81"
+        },
+        {
+            "label": "2025-12-11_14-42-42",
+            "content": "@@ -1205,18 +1205,18 @@\n f%22Pix en\n-v\n i\n+v\n ado via \n@@ -2025,18 +2025,16 @@\n liente%7D.\n-  \n %22%0A      \n",
+            "lines": "81"
+        },
+        {
+            "label": "2025-12-11_14-43-29",
+            "content": "from abc import ABC, abstractmethod\n\nclass Pagamento:\n    def __init__(self, valor: float, descricao: str):\n        self.valor = valor\n        self.descricao = descricao\n    def validar_valor(self):\n        if self.valor <= 0:\n            raise ValueError(\"Valor negativo\")\n    def resumo(self):\n        return f\"Pagamento de R$ {self.valor}: {self.descricao}\"\n    @abstractmethod\n    def processar(self):\n        pass\n\nclass CartaoCredito(Pagamento):\n    def __init__(self, valor, descricao, numero, nome_titu, limite_disp):\n        super().__init__(valor, descricao)\n        self.numero = numero\n        self.nome_titu = nome_titu\n        self.limite_disp = limite_disp\n\n    def processar(self):\n        if self.valor > self.limite_disp:\n            raise Exception(f\"Limite insuficiente no cart\u00e3o\")\n        else:\n            self.limite_disp -= self.valor\n            print(f\"Pagamento aprovado no cart\u00e3o {self.nome_titu}.    \"\n                  f\"Limite restante {self.limite_disp}\")\n\nclass Pix(Pagamento):\n    def __init__(self, valor, descricao, chave, banco):\n        super().__init__(valor, descricao)\n        self.chave = chave\n        self.banco = banco\n\n    def processar(self):\n        print(f\"Pix enviado via {self.banco} usando a chave {self.chave}\")\n\nclass Boleto(Pagamento):\n    def __init__(self, valor, descricao, codigo_barras, vencimento):\n        super().__init__(valor, descricao)\n        self.codigo_barras = codigo_barras\n        self.vencimento = vencimento\n\n    def processar(self):\n        print(f\"Boleto gerado. Aguardando pagamento.....\")\n\nclass Fiado(Pagamento):\n    def __init__(self, valor, descricao, cliente, limite_fiado):\n        super().__init__(valor, descricao)\n        self.cliente = cliente\n        self.limite_fiado = limite_fiado\n\n    def processar(self):\n        if self.valor > self.limite_fiado:\n            raise Exception(f\"Fiado negado para {self.cliente}: limite insuficiente!\")\n        self.limite_fiado -= self.valor\n        print(f\"Compra no fiado registrada para {self.cliente}.  \"\n              f\"Limite restante: R$ {self.limite_fiado}\"\n              )\n\ndef processar_pagamento(pagamento = Pagamento):\n    try:\n         pagamento.validar_valor()\n         pagamento.resumo()\n         pagamento.processar()\n    except Exception as e:\n        print(e)\n\npagamentos = [\n    Pix(150, \"Camisa esportiva\", \"email@ex.com\", \"Banco XPTO\"),\n    Pix(0, \"Cafe\", \"senna@ufc.com\", \"Banco POO\"),\n    CartaoCredito(400, \"T\u00e9nis esportivo\", \"1234 5678 9123 4567\", \"Cliente X\", 500),\n    Boleto(89.90, \"Livro de Python\", \"123456789000\", \"2025-01-10\"),\n    CartaoCredito(800, \"Notebook\", \"9999 8888 7777 6666\", \"Cliente Y\", 700),\n    Fiado(2999, \"Notebook Gamer\", \"David Senna\", 3000)\n]\nfor p in pagamentos:\n    processar_pagamento(p)\n\n",
+            "lines": "81"
         }
     ]
 }

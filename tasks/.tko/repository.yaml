@@ -12,7 +12,7 @@ sources:
   type: clone
   branch: master
   cache_path: ''
-  cache_timestamp: '2025-12-10 08:38:26'
+  cache_timestamp: '2025-12-11 14:27:36'
   filters:
   - herança
 expanded:
@@ -20,6 +20,7 @@ expanded:
 - poo@bloco_f-herança-i
 tasks:
   poo@zoo: '{rate:100, human:sim, iagen:sim, guide:sim, other:sim, alone:8}'
+  poo@pagamento: '{rate:100, human:sim, iagen:sim, guide:sim, other:sim, alone:8}'
 flags:
   quests: 0
   tracks: 0
