@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2025-12-11_15-09-33",
+            "content": "@@ -226,110 +226,4 @@\n ular\n-Valor(self):%0A        pass%0A    def __str__(self):%0A        return f%22%7Bself.id%7D, %7Bself.tipo%7D, %7Bself.entrada%7D.%22\n",
+            "lines": "9"
+        },
+        {
+            "label": "2025-12-11_15-17-07",
+            "content": "from abc import ABC, abstractmethod\n\nclass veiculo(ABC):\n    def __init__(self, id: str, entrada: int , tipo: str):\n        self.id = id\n        self.entrada = entrada\n        self.tipo = tipo\n    @abstractmethod\n    def calcularValor(self):\n        pass\n    def __str__(self):\n        return f\"{self.id}, {self.tipo}, {self.entrada}.\"",
+            "lines": "12"
+        }
+    ]
+}
