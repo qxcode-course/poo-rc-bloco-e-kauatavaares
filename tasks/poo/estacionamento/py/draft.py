@@ -33,7 +33,7 @@ class Carro(Veiculo):
         super().__init__(id, tipo, entrada)
 
     def calcularValor(self, exit: int):
-        valor = (exit-self.entrada) /10
+        valor = (exit-self.entrada) / 10
         if valor > 5:
             return f"{valor:.2f}"
         else:
@@ -107,5 +107,6 @@ def main():
             if veiculo:
                 print(estacionamento.pagar(veiculo))
                 estacionamento.lista.remove(veiculo)
-
+        else:
+            print("fail: comando invalido!!")
 main()
